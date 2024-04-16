@@ -15,8 +15,7 @@ public class ARUImodified : MonoBehaviour
 
     public Canvas canvas;
     public TMP_Text infoBox;
-
-
+    public Transform objecttoscale;
 
     AudioSource audio;
 
@@ -36,6 +35,7 @@ public class ARUImodified : MonoBehaviour
     
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,21 +45,19 @@ public class ARUImodified : MonoBehaviour
             {
                 if (hit.transform.tag == "mercury")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 0;
                     maxpointer = 2;
                     minpointer = 0;
                     displayAndPlayInfo();
-                   
+             
                 }
               
 
 
                 if (hit.transform.tag == "venus")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 3;
                     maxpointer = 5;
                     minpointer = 3;
@@ -70,74 +68,79 @@ public class ARUImodified : MonoBehaviour
 
                 if (hit.transform.tag == "earth")
                 {
-                    //do something!
-                   // displayCanvas();
+                    open();
                     infoPointer = 6;
                     maxpointer = 8;
                     minpointer = 6;
                     displayAndPlayInfo();
 
-
+                     
                 }
 
                 if (hit.transform.tag == "mars")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 9;
                     maxpointer = 11;
                     minpointer = 9;
                     displayAndPlayInfo();
 
-
                 }
 
                 if (hit.transform.tag == "jupiter")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 12;
                     maxpointer = 14;
                     minpointer = 12;
                     displayAndPlayInfo();
 
-
                 }
 
                 if (hit.transform.tag == "saturn")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 15;
                     maxpointer = 17;
                     minpointer = 15;
                     displayAndPlayInfo();
 
-
                 }
 
                 if (hit.transform.tag == "uranus")
                 {
-                    //do something!
-                    //displayCanvas();
+                    open();
                     infoPointer = 18;
                     maxpointer = 20;
                     minpointer = 18;
 
                     displayAndPlayInfo();
 
-
                 }
 
                 if(hit.transform.tag == "neptune")
                 {
-                    //displayCanvas();
+                    open();
                     infoPointer = 21;
                     maxpointer = 23;
                     minpointer = 21;
 
                     displayAndPlayInfo();
                 }
+
+                if(hit.transform.tag == "moon")
+                {
+                    open();
+                    infoPointer = 24;
+                    maxpointer = 26;
+                    minpointer = 24;
+
+                    displayAndPlayInfo();
+                }
+
+               
+            
+                
             }
             
 
@@ -165,6 +168,16 @@ public class ARUImodified : MonoBehaviour
        
     }
 
+    public void close()
+    {
+        canvas.enabled = false;
+        if(audio.isPlaying) { audio.Stop(); }
+    }
+    public void open()
+    {
+        canvas.enabled = true;
+    }
+
     public void lastInfo()
     {
         if (infoPointer > minpointer)
@@ -176,18 +189,27 @@ public class ARUImodified : MonoBehaviour
         }
     }
 
+    public void home()
+    {
+        if(audio.isPlaying) { audio.Stop();};
+        infoBox.text = "WELCOME TO AR PLANET EXPERIENCE";
+
+    }
     /*
     public void displayCanvas()
     {
         canvas.enabled = true;
 
     }
+    */
 
+    /*
     public void hideCanvas()
     {
         canvas.enabled = false;
     }
     */
+    
 
 
 

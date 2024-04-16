@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 9073676977924481960}
   - component: {fileID: 4956644635356318173}
   - component: {fileID: 4556115453950111556}
+  - component: {fileID: 3271853865204233038}
   m_Layer: 0
   m_Name: saturn
   m_TagString: saturn
@@ -211,3 +212,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3271853865204233038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672595991074470513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbef19c5a4c64e42a4b3a14bdca65a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularvelocity: 2
+  rotationSpeed: 0.2
+  targetObject: {fileID: 5000174729998497061, guid: e678b557d8431c94d9804417b4f93b4f, type: 3}

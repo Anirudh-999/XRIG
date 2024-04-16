@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 912427609906415216}
   - component: {fileID: 2801173124003010638}
   - component: {fileID: 5205116315646931431}
+  - component: {fileID: -7911607696823471592}
   m_Layer: 0
   m_Name: uranus
   m_TagString: uranus
@@ -105,3 +106,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7911607696823471592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311557578556635230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbef19c5a4c64e42a4b3a14bdca65a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularvelocity: 1.5
+  rotationSpeed: 0.12
+  targetObject: {fileID: 5000174729998497061, guid: e678b557d8431c94d9804417b4f93b4f, type: 3}

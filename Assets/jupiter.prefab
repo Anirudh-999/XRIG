@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3225762511494422624}
   - component: {fileID: 8564753507018498604}
   - component: {fileID: 6899774834347237437}
+  - component: {fileID: 7896971064387777809}
   m_Layer: 0
   m_Name: jupiter
   m_TagString: jupiter
@@ -105,3 +106,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7896971064387777809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250443622761560840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbef19c5a4c64e42a4b3a14bdca65a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularvelocity: 1.2
+  rotationSpeed: 0.25
+  targetObject: {fileID: 5000174729998497061, guid: e678b557d8431c94d9804417b4f93b4f, type: 3}

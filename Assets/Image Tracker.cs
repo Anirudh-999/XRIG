@@ -7,8 +7,9 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ImageTracker : MonoBehaviour
 {
-    public ARTrackedImageManager trackedImages;
+    private ARTrackedImageManager trackedImages;
     public GameObject[] ArPrefabs;
+    public GameObject moon;
 
     List<GameObject> ARObjects = new List<GameObject>();
 
@@ -29,27 +30,35 @@ public class ImageTracker : MonoBehaviour
     }
 
 
-    // Event Handler
+
     private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        //Create object based on image tracked
+        
         foreach (var trackedImage in eventArgs.added)
         {
-            Debug.Log(trackedImage);
+            Debug.Log(trackedImage.referenceImage.name);
+            
             foreach (var arPrefab in ArPrefabs)
             {
-                Debug.Log(arPrefab);
+                
                 if (trackedImage.referenceImage.name == arPrefab.name)
                 {
                     var newPrefab = Instantiate(arPrefab, trackedImage.transform);
                     ARObjects.Add(newPrefab);
-                    
-                    Debug.Log(arPrefab.name.ToString()+trackedImage.transform.position.ToString());
+
+                    Debug.Log(arPrefab.name.ToString() + trackedImage.transform.position.ToString());
+
+                     if (trackedImage.referenceImage.name == "earth")
+                    {
+                        var moonPrefab = Instantiate(moon, newPrefab.transform);
+                        ARObjects.Add(moonPrefab);
+                    }
                 }
+
             }
         }
 
-        //Update tracking position
+        
         foreach (var trackedImage in eventArgs.updated)
             
         {
@@ -59,10 +68,11 @@ public class ImageTracker : MonoBehaviour
                 if (gameObject.name == trackedImage.name)
                 {
                     gameObject.SetActive(trackedImage.trackingState == TrackingState.Tracking);
-                    Debug.Log(trackedImage.ToString() + "this code is running");
+                    
                 }
             }
         }
 
     }
 }
+

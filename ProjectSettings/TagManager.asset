@@ -13,6 +13,9 @@ TagManager:
   - venus
   - uranus
   - neptune
+  - moon
+  - canvas
+  - home
   layers:
   - Default
   - TransparentFX
